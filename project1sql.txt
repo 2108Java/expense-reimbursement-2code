@@ -1,0 +1,147 @@
+create table reimbursement (
+reimbursement_id serial primary key,
+reimbursement_number int unique not null,
+foreign_employees_key int references employees(employee_id),
+reimbursement_Type varchar(8),
+reimbursement_approveStatus varchar(10),
+reimbursement_amount real not null,
+reimbursement_description varchar(88),
+rTS timestamp not null default now()
+);
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (66743, (select (employee_id) from employees where employee_number = 11342), 'LODGING', 'PENDING', 300, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (59154, (select (employee_id) from employees where employee_number = 84695), 'LODGING', 'PENDING', 500, 'Fell ill' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (18514, (select (employee_id) from employees where employee_number = 47246), 'OTHER', 'PENDING', 400, 'Football tickets' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (85945, (select (employee_id) from employees where employee_number = 47564), 'TRAVEL', 'PENDING', 800, 'Family Emergency' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (13548, (select (employee_id) from employees where employee_number = 15674), 'LODGING', 'PENDING', 300, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (19754, (select (employee_id) from employees where employee_number = 96769), 'TRAVEL', 'PENDING', 700, 'Weather' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (89851, (select (employee_id) from employees where employee_number = 08475), 'FOOD', 'PENDING', 300, 'My made me sick' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (79841, (select (employee_id) from employees where employee_number = 40986), 'LODGING', 'PENDING', 300, 'My room unavailable' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (15896, (select (employee_id) from employees where employee_number = 49681), 'TRAVEL', 'PENDING', 350, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (89457, (select (employee_id) from employees where employee_number = 72354), 'OTHER', 'PENDING', 200, 'Baseball tickets' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (34875, (select (employee_id) from employees where employee_number = 64989), 'LODGING', 'PENDING', 300, 'Reservation Lost' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (04853, (select (employee_id) from employees where employee_number = 97982), 'TRAVEL', 'PENDING', 900, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (86433, (select (employee_id) from employees where employee_number = 79135), 'LODGING', 'PENDING', 300, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (03857, (select (employee_id) from employees where employee_number = 52323), 'FOOD', 'PENDING', 300, 'Charged extra' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (49064, (select (employee_id) from employees where employee_number = 27982), 'FOOD', 'PENDING', 150, 'I did not like the food' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (49062, (select (employee_id) from employees where employee_number = 95692), 'LODGING', 'PENDING', 550, 'A/C went out' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (98736, (select (employee_id) from employees where employee_number = 52983), 'TRAVEL', 'PENDING', 1000, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (67489, (select (employee_id) from employees where employee_number = 07865), 'TRAVEL', 'PENDING', 750, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (34769, (select (employee_id) from employees where employee_number = 05872), 'TRAVEL', 'PENDING', 300, 'My plan was cancelled' );
+
+insert into reimbursement(reimbursement_number, foreign_employees_key, reimbursement_type, reimbursement_approvestatus, reimbursement_amount, 
+reimbursement_description) values (63432, (select (employee_id) from employees where employee_number = 24734), 'FOOD', 'PENDING', 250, 'Power Outage' );
+
+
+drop table reimbursement;
+
+
+create table finance (
+finance_id serial primary key, --primary key
+finance_userName varchar(44) unique,
+finance_userPassword varchar(44) not null,
+finance_number int unique not null,
+finance_name varchar(44)
+);
+
+insert into finance(finance_userName, finance_userPassword, finance_number, finance_name) values ('goodman123', 'goodman123', 77905, 'Good Man');
+
+insert into finance(finance_userName, finance_userPassword, finance_number, finance_name) values ('bestboss', 'yourstruly', 84546, 'Theodore');
+
+insert into finance(finance_userName, finance_userPassword, finance_number, finance_name) values ('splinter', 'lovespizza', 18954, 'April');
+
+insert into finance(finance_userName, finance_userPassword, finance_number, finance_name) values ('comedy', 'thatswhat', 36842, 'Micheal');
+
+insert into finance(finance_userName, finance_userPassword, finance_number, finance_name) values ('mrtwocode', 'tacos', 16587, 'Dave');
+
+
+drop table finance;
+
+
+create table employees (
+employee_id serial primary key, --primary key
+employee_number int unique,
+employee_userName varchar(44),
+employee_userPassword varchar(44) not null,
+employee_name varchar(44)
+);
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('goodworker123', 'goodworker123', 11342, 'Good Worker');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('hardwork', 'teamwork', 84695, 'Tim');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('pigsty', 'cleanest', 47246, 'Jared');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('messy', 'hairstyle', 47564, 'Shawn');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('trustworthy', 'newguy', 15674, 'Ben');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('activelistener', 'bestfriend', 96769, 'Jessica');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('shyguy', 'quietkid', 08475, 'Mark');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('focused', 'zeroedin', 40986, 'Will');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('plumber', 'mariobros', 49681, 'Luigi');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('honesty', 'therapy', 72354, 'Lisa');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('hungryhungry', 'glutton', 64989, 'Henry');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('sleepyhead', 'mrcrane', 97982, 'Johnny');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('talented', 'goingtosouthbeach', 79135, 'Dwayne');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('whizkid', 'smartguy', 52323, 'Matt');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('hulknation', 'incredible', 27982, 'Bruce');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('diesel', 'shaqutus', 95692, 'Shaq');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('sporty', 'volleyball', 52983, 'Amy');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('primetime', 'football', 07865, 'Deion');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('icebergslim', 'basketball', 05872, 'Kevin');
+
+insert into employees(employee_userName, employee_userPassword, employee_number, employee_name) values ('toofast', 'tooslow', 24734, 'Bolt');
+
+
+drop table employees;
