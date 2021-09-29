@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome To The Reimbursement Request Page</title>
+    
+</head>
+
+<body>
+    <div>
+        <h1>Reimbursement Request</h1>
+        <form action="http://localhost:9000/reimbursementRequest" method="GET">
+            
+<!--
+            private int reimbursementId;
+	private int reimbursementNumber;
+	private int employeeId;
+	private String reimbursementType;
+	private String approveStatus;
+	private double amount;
+	private String description;
+	private String timeStamp;
+-->
+            <h3>Enter Your Employee Number</h3>
+            <input type="text" name="employeeNumber">
+            
+            <h3>Select Reimbursement Type</h3>
+            <!--<input type="text" name="reimbursementType">-->
+            <input type="radio" id= "logging" name="reimbursementType" value="LOGGING">
+            <label for="logging">Logging</label><br>
+            <input type="radio" id= "travel" name="reimbursementType" value="TRAVEL">
+            <label for="travel">Travel</label><br>
+            <input type="radio" id= "food" name="reimbursementType" value="FOOD">
+            <label for="food">Food</label><br>
+            <input type="radio" id= "other" name="reimbursementType" value="OTHER">
+            <label for="other">Other</label><br>
+            <h3>Reimbursement Amount</h3>
+            <input type="number" name="reimbursementAmount" min= "1" max="100000000">
+
+            
+            <h3>Description Why You Should Be Reimbursed</h3>
+            <textarea rows = "5" cols = "50" name = "reimbursementDescription">
+                Enter your reason here
+             </textarea>
+           
+            <input type="submit">
+    
+        </form>
+    </div>
+    
+</body>
+
+</html>
