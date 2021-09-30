@@ -12,6 +12,12 @@ public class DAOEmployeeImp implements DAOEmployee {
 
 	ConnectionFactory connectionFactory;
 	
+	public DAOEmployeeImp() {
+		super();
+		
+		connectionFactory = new ConnectionFactory();
+	}
+
 	@Override
 	public Employees selectEmployee(String username, String password) {
 		// TODO Auto-generated method stub
@@ -50,9 +56,10 @@ public class DAOEmployeeImp implements DAOEmployee {
 				if((rs != null) &&(rs.next())) {
 				
 					employee= new Employees(rs.getInt("employee_id"), rs.getInt("employee_number"), 
-						rs.getString("employee_userName"), rs.getString("employee_userPassword"), rs.getString("employee_name "));
+						rs.getString("employee_userName"), rs.getString("employee_userPassword"), rs.getString("employee_name"));
 				}
 			
+				//System.out.println(employee.toString());
 			
 			rs.close();                         
 			ps.close();
