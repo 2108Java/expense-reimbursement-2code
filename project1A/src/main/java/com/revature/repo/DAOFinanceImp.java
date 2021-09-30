@@ -13,6 +13,18 @@ public class DAOFinanceImp implements DAOFinance {
 
 	ConnectionFactory connectionFactory;
 	
+	
+	
+	
+	public DAOFinanceImp() {
+		super();
+		
+		connectionFactory = new ConnectionFactory();
+	}
+
+
+
+
 	@Override
 	public Finance selectFinance(String username, String password) {
 		// TODO Auto-generated method stub

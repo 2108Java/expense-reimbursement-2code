@@ -9,6 +9,13 @@ public class DAOReimbursementImp implements DAOReimbursement {
 
 	ConnectionFactory connectionFactory;
 	
+	
+	
+	public DAOReimbursementImp() {
+		super();
+		connectionFactory = new ConnectionFactory();
+	}
+
 	@Override
 	public ArrayList<Reimbursement> selectAllEmployeeRequest(int employeeNumber) {
 		// TODO Auto-generated method stub

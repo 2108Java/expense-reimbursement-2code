@@ -10,6 +10,11 @@ public class ReimbursementServiceImp implements ReimbursementService {
 	DAOReimbursement daoReimbursement;
 	
 	
+	public ReimbursementServiceImp(DAOReimbursement daoReimbursement) {
+		super();
+		this.daoReimbursement = daoReimbursement;
+	}
+
 	@Override
 	public ArrayList<Reimbursement> GetAllEmployeeRequest(int employeeNumber) {
 		// TODO Auto-generated method stub
