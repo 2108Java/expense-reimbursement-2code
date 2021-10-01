@@ -1,5 +1,8 @@
 package com.revature.models;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class Reimbursement {
 
 	private int reimbursementId;
@@ -9,12 +12,12 @@ public class Reimbursement {
 	private String approveStatus;
 	private double amount;
 	private String description;
-	private String timeStamp;
+	private Timestamp timeStamp;
 	
 	
 	
 	public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
-			String approveStatus, double amount, String description, String timeStamp) {
+			String approveStatus, double amount, String description, Timestamp timestamp) {
 		super();
 		this.reimbursementId = reimbursementId;
 		this.reimbursementNumber = rembursementNumber;
@@ -23,11 +26,11 @@ public class Reimbursement {
 		this.approveStatus = approveStatus;
 		this.amount = amount;
 		this.description = description;
-		this.timeStamp = timeStamp;
+		this.timeStamp = timestamp;
 	}
 	
 	public Reimbursement(int rembursementNumber, int employeeId, String reimursementType,
-			String approveStatus, double amount, String description, String timeStamp) {
+			String approveStatus, double amount, String description, Timestamp timeStamp) {
 		this(-1, rembursementNumber, employeeId, reimursementType,
 				approveStatus, amount, description, timeStamp);
 	}
@@ -88,11 +91,11 @@ public class Reimbursement {
 		this.description = description;
 	}
 
-	public String getTimeStamp() {
+	public Timestamp getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(String timeStamp) {
+	public void setTimeStamp(Timestamp timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 
