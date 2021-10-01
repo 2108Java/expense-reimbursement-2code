@@ -46,4 +46,11 @@ public class ReimbursementServiceImp implements ReimbursementService {
 		return this.daoReimbursement.insertRequest(reimbursment, employeeNumber);
 	}
 
+	@Override
+	public ArrayList<Reimbursement> GetAllRequestsByApproveStatus(String approveStatus) {
+		// TODO Auto-generated method stub
+		return this.daoReimbursement.selectAllByApproveStatus(approveStatus);
+		
+	}
+
 }

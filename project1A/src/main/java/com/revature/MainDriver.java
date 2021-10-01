@@ -90,7 +90,7 @@ private static void printList(List list) {
 		System.out.println("listC: ");
 		printList(list);
 		
-		reimbursementService.ChangeStatusOfRequestRnumber(63432, "APPROVED");
+		reimbursementService.ChangeStatusOfRequestRnumber(63432, "APPROVED"); //reimbursement number
 		
 		list = reimbursementService.GetAllRequests();
 		System.out.println("listD: ");
@@ -102,6 +102,10 @@ private static void printList(List list) {
 		
 		list = reimbursementService.GetAllRequests();
 		System.out.println("listE: ");
+		printList(list);
+		
+		list = reimbursementService.GetAllRequestsByApproveStatus("PENDING");
+		System.out.println("listF: ");
 		printList(list);
 	}
 

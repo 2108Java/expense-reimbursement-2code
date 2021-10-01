@@ -255,4 +255,61 @@ public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId
 
 	}
 
+	@Override
+	public ArrayList<Reimbursement> selectAllByApproveStatus(String approveStatus) {
+		// TODO Auto-generated method stub
+ArrayList<Reimbursement> reimbursementList = new ArrayList<>();
+		
+		try {
+			Connection con = this.connectionFactory.getConnection();
+	/*
+	 * create table reimbursement(
+	reimbursement_id serial primary key,
+	reimbursement_number int unique not null,
+	foreign_employees_key int references employees(employee_id),
+	reimbursement_Type varchar(8),
+	reimbursement_approveStatus varchar(10),
+	reimbursement_amount real not null,
+	reimbursement_description varchar(70),
+	rTS timestamp NOT NULL DEFAULT NOW()
+);		
+
+public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
+			String approveStatus, double amount, String description, String timeStamp)
+*/
+			
+			String sql ="SELECT * FROM reimbursement WHERE reimbursement_approveStatus= ?;";
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			ps.setString(1, approveStatus);
+			
+			
+			
+			ResultSet rs = ps.executeQuery();
+			
+			
+				while((rs != null) &&(rs.next())) {
+					
+					Reimbursement reimbursement	= new Reimbursement(rs.getInt("reimbursement_id"), rs.getInt("reimbursement_number"), 
+						rs.getInt("foreign_employees_key"), rs.getString("reimbursement_Type"), rs.getString("reimbursement_approveStatus"),
+						rs.getDouble("reimbursement_amount"), rs.getString("reimbursement_description"), rs.getTimestamp("rTS") );
+					reimbursementList.add(reimbursement);
+				}
+			
+				//System.out.println(employee.toString());
+			
+			rs.close();                         
+			ps.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return reimbursementList;
+
+	}
+
 }
