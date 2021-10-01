@@ -18,7 +18,7 @@ public class ReimbursementServiceImp implements ReimbursementService {
 	@Override
 	public ArrayList<Reimbursement> GetAllEmployeeRequest(int employeeNumber) {
 		// TODO Auto-generated method stub
-		return this.daoReimbursement.selectAllEmployeeRequestByNumber(employeeNumber);
+		return this.daoReimbursement.selectAllEmployeeRequest(employeeNumber);
 	}
 
 	@Override
@@ -27,12 +27,7 @@ public class ReimbursementServiceImp implements ReimbursementService {
 		return this.daoReimbursement.selectAllEmployeeRequest();
 	}
 
-	@Override
-	public boolean ChangeStatusOfRequestEnumber(int employeeNumber, String approveStatus) {
-		// TODO Auto-generated method stub
-		return this.daoReimbursement.updateStatusByEmployeeNumber(employeeNumber, approveStatus);
-	}
-
+	
 	@Override
 	public boolean ChangeStatusOfRequestRnumber(int reimbursementNumber, String approveStatus) {
 		// TODO Auto-generated method stub
@@ -46,9 +41,9 @@ public class ReimbursementServiceImp implements ReimbursementService {
 	}
 
 	@Override
-	public boolean MakeRequest(Reimbursement reimbursment) {
+	public boolean MakeRequest(Reimbursement reimbursment, int employeeNumber) {
 		// TODO Auto-generated method stub
-		return this.daoReimbursement.insertRequest(reimbursment);
+		return this.daoReimbursement.insertRequest(reimbursment, employeeNumber);
 	}
 
 }

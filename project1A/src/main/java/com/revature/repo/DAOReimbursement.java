@@ -8,13 +8,13 @@ public interface DAOReimbursement {
 
 	ArrayList<Reimbursement> selectAllEmployeeRequest(int employeeNumber);
 
-	boolean insertRequest(Reimbursement reimbursment);
+	boolean insertRequest(Reimbursement reimbursment, int employeeNumber);
 
 	ArrayList<Reimbursement> selectAllEmployeeRequest();
 
-	ArrayList<Reimbursement> selectAllEmployeeRequestByNumber(int employeeNumber);
+	//ArrayList<Reimbursement> selectAllEmployeeRequestByNumber(int employeeNumber);
 
-	boolean updateStatusByEmployeeNumber(int employeeNumber, String approveStatus);
+	//boolean updateStatusByEmployeeNumber(int employeeNumber, String approveStatus);
 
 	boolean updateStatusByReimbursementNumber(int reimbursementNumber, String approveStatus);
 
