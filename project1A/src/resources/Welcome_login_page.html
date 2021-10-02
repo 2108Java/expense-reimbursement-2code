@@ -2,40 +2,50 @@
 <html>
     <head>
         <title>Welcome To The Reimbursement App</title>
+        <br>
+        <br>
         <link rel="stylesheet" href="Login.css">
+        <script src="Login.js"></script>
     </head>
 
     <body>
 
-        <div>
-            <h1>Employee Login</h1>
-            <form action="http://localhost:9000/employeeLogin" method="GET">
-                
-                <h3>Username</h3>
-                <input type="text" name="username">
-                
-                <h3>Password</h3>
-                <input type="password" name="password">
-                
-                <input type="submit">
-        
-            </form>
-        </div>
+
+    <div>
+        <h1>Employee Login</h1>
+        <form action="http://localhost:9000/employeeLogin" method="GET">
+            
+            <h3>Username</h3>
+            <input type="text" name="username" id="emUsername">
+            
+            <h3>Password</h3>
+            <input type="password" name="password" id="emPassword"><br>
+            <br>
+            <button type="button" onclick="emLogin()">Login <i class='fas fa-exclamation-triangle'></i></button>
+            <!-- <input type="submit" class="login" value="Login"> -->
+            
+        </form>
+    
+    </div>
+    
+<br>
+<br>
     
         <div>
             <h1>Finance Manager Login</h1>
             <form action="http://localhost:9000/financeMLogin" method="GET">
                 
                 <h3>Username</h3>
-                <input type="text" name="username">
+                <input type="text" name="username" id="maUsername">
                 
                 <h3>Password</h3>
-                <input type="password" name="password">
+                <input type="password" name="password" id="maPassword"><br>
+                <br>
+                <button type="button" onclick="maLogin()">Login</button>
+                <!-- <input type="submit" class="login" value="Login"> -->
                 
-                <input type="submit">
-        
             </form>
         </div>
-
+        
     </body>
 </html>
