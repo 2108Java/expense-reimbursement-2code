@@ -4,12 +4,89 @@
 <head>
 <title>Welcome To The Finance Page</title>
 <link rel="stylesheet" href="Login.css">
+<script src="Dropdown.js"></script> <!-- idea is the manager clicks dropdown menu and chooses employee name and number(hidden) to view all requests-->
     
 </head>
 
 <body>
-
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Employee 1</a>
+          <a href="#">Employee 2</a>
+          <a href="#">Employee 3</a>
+        </div>
+      </div><br>
     
+      <label>Approved</label>
+    <table id="ApprovedTable">
+        <thead>
+            <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Number</th>
+                <th scope="col">Type of Reimbursement</th>
+                <th scope="col">Amount Requested</th>
+                <th scope="col">Description</th>
+                <th scope="col">Reimbursement Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>fake name</td>
+                <td>78488</td>
+                <td>Lodging</td>
+                <td>500</td>
+                <td>makes sense</td>
+                <td>approved</td>
+            </tr>
+        </tbody>
+    </table>
+    <label>Denied</label>
+    <table id="DeniedTable">
+        <thead>
+            <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Number</th>
+                <th scope="col">Type of Reimbursement</th>
+                <th scope="col">Amount Requested</th>
+                <th scope="col">Description</th>
+                <th scope="col">Reimbursement Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>fake name</td>
+                <td>78488</td>
+                <td>Lodging</td>
+                <td>500</td>
+                <td>your fault</td>
+                <td>denied</td>
+            </tr>
+        </tbody>
+    </table>
+    <label>Pending</label>
+    <table id="PendingTable">
+        <thead>
+            <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Number</th>
+                <th scope="col">Type of Reimbursement</th>
+                <th scope="col">Amount Requested</th>
+                <th scope="col">Description</th>
+                <th scope="col">Reimbursement Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>fake name</td>
+                <td>78488</td>
+                <td>Lodging</td>
+                <td>500</td>
+                <td>processing</td>
+                <td>pending</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
