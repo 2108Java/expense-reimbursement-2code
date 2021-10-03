@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Random;
 
+import com.revature.controller.RequestMappings;
 import com.revature.models.Employees;
 import com.revature.models.Finance;
 import com.revature.models.Reimbursement;
@@ -19,6 +20,8 @@ import com.revature.service.FinanceService;
 import com.revature.service.FinanceServiceImp;
 import com.revature.service.ReimbursementService;
 import com.revature.service.ReimbursementServiceImp;
+
+import io.javalin.Javalin;
 
 public class MainDriver {
 
@@ -50,7 +53,7 @@ private static void printList(List list) {
 		 * 
 		 * 
 		*/
-		
+		/*
 		DAOEmployee daoEmployee = new DAOEmployeeImp();
 		EmployeeService employeeService = new EmployeeServiceImp(daoEmployee);
 		
@@ -107,6 +110,28 @@ private static void printList(List list) {
 		list = reimbursementService.GetAllRequestsByApproveStatus("PENDING");
 		System.out.println("listF: ");
 		printList(list);
+		
+		*/
+		
+		//PropertiesParser.getProperties(); 
+		   
+		   
+		   Javalin app = Javalin.create(config -> config.addStaticFiles(
+					staticFiles ->
+					{
+						staticFiles.directory = "/resources";
+					}
+					)).start(8000);
+		   
+		   //We've got connection to our html files 
+		   //We need to connect our Java functionality 
+		   
+		   
+		   //Servlets are what handle Http REquests and Responses directly. 
+		   //Javalin abstracts away the process of creating and connecting our servlets. 
+		   //Setting up a connection endpoints 
+		   
+		   RequestMappings.setupEndPoints(app);
 	}
 
 }
