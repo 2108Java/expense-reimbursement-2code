@@ -218,11 +218,13 @@ function getAllApprove(Status){
 	if(this.readyState == 4 && this.status == 200){
 	
 	let tableBody = document.getElementById("TableBody");
-	
+	tableBody.innerHTML ="";
+		
 	console.log("TableBody");
-	console.log(tableBody.delete);
+	//console.log(tableBody.delete);
 	
-
+//var Table = document.getElementById("mytable");
+//Table.innerHTML = "";
 	
 	
 		let responseObject = JSON.parse(this.responseText);
