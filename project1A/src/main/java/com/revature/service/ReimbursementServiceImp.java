@@ -7,7 +7,7 @@ import com.revature.repo.DAOReimbursement;
 
 public class ReimbursementServiceImp implements ReimbursementService {
 
-	DAOReimbursement daoReimbursement;
+	private DAOReimbursement daoReimbursement;
 	
 	
 	public ReimbursementServiceImp(DAOReimbursement daoReimbursement) {

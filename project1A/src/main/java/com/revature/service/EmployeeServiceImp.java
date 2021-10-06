@@ -5,7 +5,7 @@ import com.revature.repo.DAOEmployee;
 
 public class EmployeeServiceImp implements EmployeeService {
 	
-	DAOEmployee daoEmployee;
+	private DAOEmployee daoEmployee;
 	
 	public EmployeeServiceImp(DAOEmployee daoEmployee) {
 		super();
