@@ -10,7 +10,7 @@ import com.revature.util.ConnectionFactory;
 
 public class DAOEmployeeImp implements DAOEmployee {
 
-	ConnectionFactory connectionFactory;
+	private ConnectionFactory connectionFactory;
 	
 	public DAOEmployeeImp() {
 		super();

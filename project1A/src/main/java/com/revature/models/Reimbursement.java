@@ -12,31 +12,31 @@ public class Reimbursement {
 	private String approveStatus;
 	private double amount;
 	private String description;
-	private Timestamp timeStamp;
+	private String timeStamp;
 	
 	
 	
-	public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
+	public Reimbursement(int reimbursementId, int reimbursementNumber, int employeeId, String reimbursementType,
 			String approveStatus, double amount, String description, Timestamp timestamp) {
 		super();
 		this.reimbursementId = reimbursementId;
-		this.reimbursementNumber = rembursementNumber;
+		this.reimbursementNumber = reimbursementNumber;
 		this.employeeId = employeeId;
-		this.reimbursementType = reimursementType;
+		this.reimbursementType = reimbursementType;
 		this.approveStatus = approveStatus;
 		this.amount = amount;
 		this.description = description;
-		this.timeStamp = timestamp;
+		this.timeStamp = timestamp.toString();
 	}
-	
-	public Reimbursement(int rembursementNumber, int employeeId, String reimursementType,
+
+	public Reimbursement(int reimbursementNumber, int employeeId, String reimbursementType,
 			String approveStatus, double amount, String description, Timestamp timeStamp) {
-		this(-1, rembursementNumber, employeeId, reimursementType,
+		this(-1, reimbursementNumber, employeeId, reimbursementType,
 				approveStatus, amount, description, timeStamp);
 	}
 
 	public int getReimbursementId() {
-		return reimbursementId;
+		return this.reimbursementId;
 	}
 
 	public void setReimbursementId(int reimbursementId) {
@@ -44,15 +44,15 @@ public class Reimbursement {
 	}
 
 	public int getRembursementNumber() {
-		return reimbursementNumber;
+		return this.reimbursementNumber;
 	}
 
-	public void setRembursementNumber(int rembursementNumber) {
-		this.reimbursementNumber = rembursementNumber;
+	public void setRembursementNumber(int reimbursementNumber) {
+		this.reimbursementNumber = reimbursementNumber;
 	}
 
 	public int getEmployeeId() {
-		return employeeId;
+		return this.employeeId;
 	}
 
 	public void setEmployeeId(int employeeId) {
@@ -60,15 +60,15 @@ public class Reimbursement {
 	}
 
 	public String getReimursementType() {
-		return reimbursementType;
+		return this.reimbursementType;
 	}
 
-	public void setReimursementType(String reimursementType) {
-		this.reimbursementType = reimursementType;
+	public void setReimursementType(String reimbursementType) {
+		this.reimbursementType = reimbursementType;
 	}
 
 	public String getApproveStatus() {
-		return approveStatus;
+		return this.approveStatus;
 	}
 
 	public void setApproveStatus(String approveStatus) {
@@ -76,7 +76,7 @@ public class Reimbursement {
 	}
 
 	public double getAmount() {
-		return amount;
+		return this.amount;
 	}
 
 	public void setAmount(double amount) {
@@ -84,24 +84,24 @@ public class Reimbursement {
 	}
 
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public Timestamp getTimeStamp() {
-		return timeStamp;
+	public String getTimeStamp() {
+		return this.timeStamp;
 	}
 
 	public void setTimeStamp(Timestamp timeStamp) {
-		this.timeStamp = timeStamp;
+		this.timeStamp = timeStamp.toString();
 	}
 
 	@Override
 	public String toString() {
-		return "Reimbursement [reimbursementId=" + reimbursementId + ", rembursementNumber=" + reimbursementNumber
+		return "Reimbursement [reimbursementId=" + reimbursementId + ", reimbursementNumber=" + reimbursementNumber
 				+ ", employeeId=" + employeeId + ", reimursementType=" + reimbursementType + ", approveStatus="
 				+ approveStatus + ", amount=" + amount + ", description=" + description + ", timeStamp=" + timeStamp
 				+ "]";

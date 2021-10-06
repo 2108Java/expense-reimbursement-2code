@@ -12,7 +12,7 @@ import com.revature.util.ConnectionFactory;
 
 public class DAOReimbursementImp implements DAOReimbursement {
 
-	ConnectionFactory connectionFactory;
+	private ConnectionFactory connectionFactory;
 	
 	
 	

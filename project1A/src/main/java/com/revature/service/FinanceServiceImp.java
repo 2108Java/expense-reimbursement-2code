@@ -5,7 +5,7 @@ import com.revature.repo.DAOFinance;
 
 public class FinanceServiceImp implements FinanceService {
 
-	DAOFinance daoFinance;
+	private DAOFinance daoFinance;
 	
 	
 	public FinanceServiceImp(DAOFinance daoFinance) {

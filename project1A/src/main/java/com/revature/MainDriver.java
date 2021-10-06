@@ -113,15 +113,21 @@ private static void printList(List list) {
 		
 		*/
 		
+		//DAOReimbursement daoReimbursement = new DAOReimbursementImp();
+		//ReimbursementService reimbursementService = new ReimbursementServiceImp(daoReimbursement);
 		//PropertiesParser.getProperties(); 
-		   
+		//List list = reimbursementService.GetAllEmployeeRequest(11342);
+		//System.out.println("size: "+list.size());
+		///printList(list);
+		
+		
 		   
 		   Javalin app = Javalin.create(config -> config.addStaticFiles(
 					staticFiles ->
 					{
-						staticFiles.directory = "/resources";
+						staticFiles.directory = "/public";
 					}
-					)).start(8000);
+					)).start(7001);
 		   
 		   //We've got connection to our html files 
 		   //We need to connect our Java functionality 

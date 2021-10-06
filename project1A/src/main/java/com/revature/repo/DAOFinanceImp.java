@@ -11,7 +11,7 @@ import com.revature.util.ConnectionFactory;
 
 public class DAOFinanceImp implements DAOFinance {
 
-	ConnectionFactory connectionFactory;
+	private ConnectionFactory connectionFactory;
 	
 	
 	
