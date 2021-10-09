@@ -3,25 +3,59 @@
 
 <head>
 <title>Welcome To The Finance Page</title>
-<link rel="stylesheet" href="Login.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" >
+<!-- <link rel="stylesheet" href="Login.css"> -->
 <script src="Dropdown.js"></script> <!-- idea is the manager clicks dropdown menu and chooses employee name and number(hidden) to view all requests-->
     
 </head>
-
+<style>
+    body{background-color:lightslategray;}
+    table, th, td{border: 1px solid black;
+                border-collapse: collapse;}
+</style>
 <body>
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Employee All</a>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+            Employee List
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Employees</a></li>
+            <li><a class="dropdown-item" href="#">Employee 1</a></li>
+            <li><a class="dropdown-item" href="#">Employee 2</a></li>
+            <li><a class="dropdown-item" href="#">Employee 3</a></li>
+            <li><a class="dropdown-item" href="#">Employee 4</a></li>
+            <li><a class="dropdown-item" href="#">Employee 5</a></li>
+            <li><a class="dropdown-item" href="#">Employee 6</a></li>
+            <li><a class="dropdown-item" href="#">Employee 7</a></li>
+            <li><a class="dropdown-item" href="#">Employee 8</a></li>
+            <li><a class="dropdown-item" href="#">Employee 9</a></li>
+            <li><a class="dropdown-item" href="#">Employee 10</a></li>
+            <li><a class="dropdown-item" href="#">Employee 11</a></li>
+            <li><a class="dropdown-item" href="#">Employee 12</a></li>
+            <li><a class="dropdown-item" href="#">Employee 13</a></li>
+            <li><a class="dropdown-item" href="#">Employee 14</a></li>
+            <li><a class="dropdown-item" href="#">Employee 15</a></li>
+            <li><a class="dropdown-item" href="#">Employee 16</a></li>
+            <li><a class="dropdown-item" href="#">Employee 17</a></li>
+            <li><a class="dropdown-item" href="#">Employee 18</a></li>
+            <li><a class="dropdown-item" href="#">Employee 19</a></li>
+            <li><a class="dropdown-item" href="#">Employee 20</a></li>
+          </ul>
+        <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content"> -->
+          <!-- <a href="#">Employee All</a>
           <a href="#">Employee 1</a>
           <a href="#">Employee 2</a>
-          <a href="#">Employee 3</a>
-        </div>
+          <a href="#">Employee 3</a> -->
+        <!-- </div> -->
       </div><br>
     
-      <label>Approved</label>
-    <table id="ApprovedTable">
-        <thead>
+<div class="container mt- 3">
+    <!-- <h2>Dark Striped Table</h2>
+    <p>Combine .table-dark and .table-striped to create a dark, striped table:</p> -->
+    <table class="table caption-top table-dark" id="ApprovedTable">
+        <caption style="background-color: white;"><strong>Approved Reimbursement</strong></caption>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">Employee Name</th>
                 <th scope="col">Employee Number</th>
@@ -42,8 +76,11 @@
             </tr>
         </tbody>
     </table>
-    <label>Denied</label>
-    <table id="DeniedTable">
+</div>      
+<div class="container mt-3">
+
+    <table class="table caption-top table-dark" id="DeniedTable">
+        <caption style="background-color:white;"><strong>Denied Reimbursement</strong></caption>
         <thead>
             <tr>
                 <th scope="col">Employee Name</th>
@@ -65,8 +102,12 @@
             </tr>
         </tbody>
     </table>
-    <label>Pending</label>
-    <table id="PendingTable">
+</div>    
+
+<div class="container mt-3">
+
+    <table class="table caption-top table-dark" id="PendingTable">
+        <caption style="background-color:white;"><strong>Pending Status</strong></caption>
         <thead>
             <tr>
                 <th scope="col">Employee Name</th>
@@ -88,6 +129,7 @@
             </tr>
         </tbody>
     </table>
+    
 </body>
 
 </html>
