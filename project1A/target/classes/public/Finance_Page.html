@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Welcome To The Finance Page</title>
+<link rel="stylesheet" href="Login.css">
+ 
+</head>
+
+<body>
+
+	<label id="financename">placeholder name:</label>
+    <br></br>
+    <label id="financeNumber">placeholder number:</label>
+	
+
+
+    <table id="ApprovedTable">
+        <thead>
+            <tr>
+                <th scope="col">Reimbursement Number</th>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Type of Reimbursement</th>
+                <th scope="col">Reimbursement Status</th>
+                <th scope="col">Amount Requested</th>
+                <th scope="col">Description</th>                
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody id = "TableBody">
+            <tr>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--  <form name="formA"> -->
+<input type="radio" id= "approve" name="myradio" value="A"/>
+<label for="approve">Approve</label><br>
+
+<input type="radio" id = "rejected"  name="myradio" value="R"/>
+<label for="rejected">Rejected  </label><br>
+
+<input type="radio" id = "pending" name="myradio" value="P"/>
+<label for="pending">Pending</label><br>
+
+<input type="radio" id= "ALL" name="myradio" value="ALL"/>
+<label for="ALL">ALL</label><br>
+
+<h2>Update Status</h2>
+<form action="http://localhost:7001/setStatus" method="post">
+    
+    <label for="reimbursementNumber">Reimbursement Number </label>
+    <input type="number" name="reimbursementNumber" min= "1" max="100000000">
+    
+    <label for="status">Status </label>
+    <input type="text" name="status">
+    
+    <input type="submit" value="Submit">
+</form>
+
+
+
+    
+    <a href="/invalidateSession">LOGOUT</a>
+    
+    <script src="financePage.js"></script>
+</body>
+
+</html>

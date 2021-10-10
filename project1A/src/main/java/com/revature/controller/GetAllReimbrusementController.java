@@ -25,7 +25,7 @@ private ReimbursementService reimbursementService;
 	}
 	public ArrayList<Reimbursement> getAll() {
 		// TODO Auto-generated method stub
-		return this.reimbursementService.GetAllRequests();
+		return this.reimbursementService.getAllRequests();
 	}
 	public void setStatus(Context ctx) {
 		// TODO Auto-generated method stub
@@ -35,7 +35,7 @@ private ReimbursementService reimbursementService;
 		//System.out.println("reimbursementNumber: "+ reimbursementNumber);
 		//System.out.println("status: "+ status );
 		
-		this.reimbursementService.ChangeStatusOfRequestRnumber(reimbursementNumber, status.toUpperCase());
+		this.reimbursementService.changeStatusOfRequestRnumber(reimbursementNumber, status.toUpperCase());
 		
 		
 		try {
@@ -83,7 +83,7 @@ private ReimbursementService reimbursementService;
 		
 		
 		
-		this.reimbursementService.MakeRequest(rq, employeeNumber);
+		this.reimbursementService.makeRequest(rq, employeeNumber);
 		
 		try {
 			ctx.res.sendRedirect("http://localhost:7001/");
