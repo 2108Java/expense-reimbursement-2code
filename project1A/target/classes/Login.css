@@ -16,8 +16,6 @@ h3{
     
 }
 
-
-
 div {
     text-align: center;
     
@@ -29,7 +27,7 @@ div {
         padding-bottom: 10px;
         padding-top: 2px;
      
-    background-color:white;
+    background-color: white;
     border-right-style:outset;
     border-bottom-style:outset;
     border-width: 5px;

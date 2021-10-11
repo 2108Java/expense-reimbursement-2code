@@ -4,27 +4,22 @@
         <title>Welcome To The Reimbursement App</title>
         <br>
         <br>
-        <link href="css/bootstrap.min.css" rel="stylesheet" >
-        <!-- <link rel="stylesheet" href="Login.css"> -->
+        <link rel="stylesheet" href="Login.css">
         <script src="Login.js"></script>
     </head>
-<style>
-    body{background-color: lightslategray;}
-</style>
+
     <body>
 
 
-    <div class="d-flex flex-column min-vh-50 justify-content-center align-items-center">
-        <h1><u>Employee Login</u></h1>
-        <form action="http://localhost:5500/employeeLogin" method="GET">
+    <div>
+        <h1>Employee Login</h1>
+        <form action="http://localhost:9000/employeeLogin" method="GET">
             
-            <h3 class="text-center">Username</h3>
+            <h3>Username</h3>
             <input type="text" name="username" id="emUsername">
             
-            <h3 class="text-center">Password</h3>
-
-                <input type="password" name="password" id="emPassword"><br>
-        
+            <h3>Password</h3>
+            <input type="password" name="password" id="emPassword"><br>
             <br>
             <button type="button" onclick="emLogin()">Login <i class='fas fa-exclamation-triangle'></i></button>
             <!-- <input type="submit" class="login" value="Login"> -->
@@ -36,24 +31,21 @@
 <br>
 <br>
     
-
-
-        <div class="d-flex flex-column min-vh-50 justify-content-center align-items-center ">
-            <h1 ><u>Finance Manager Login</u></h1>
-    
-            <form action="http://localhost:5500/financeMLogin" method="GET">
+        <div>
+            <h1>Finance Manager Login</h1>
+            <form action="http://localhost:9000/financeMLogin" method="GET">
                 
-                <h3 class="text-center">Username</h3>
+                <h3>Username</h3>
                 <input type="text" name="username" id="maUsername">
                 
-                <h3 class="text-center">Password</h3>
+                <h3>Password</h3>
                 <input type="password" name="password" id="maPassword"><br>
                 <br>
                 <button type="button" onclick="maLogin()">Login</button>
                 <!-- <input type="submit" class="login" value="Login"> -->
                 
             </form>
-    
-    </div>
+        </div>
+        
     </body>
 </html>
