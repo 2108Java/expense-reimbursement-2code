@@ -1,19 +1,45 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Welcome To The Reimbursement App</title>
-        <br>
-        <br>
-        <!--  <link rel="stylesheet" href="Login.css">
-        <script src="Login.js"></script>
-        -->
-    </head>
 
+
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+<style type="text/css">
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+
+</style>
+</head>
     <body>
+   
 
+			<br>
+     <video src="pexels-rostislav-uzunov-9629255.mp4" muted loop autoplay id="myVideo"></video>
+     
 
+	<div class="content" class="container" >
 
-<div>
+ 	<h1 ><center>Welcome To The Reimbursement App</center></h1><br>
+
+	
+	
+		 <div class="row">
+		<div class="col">
             <h1>Finance Manager Login</h1>
             <form action="http://localhost:7001/authenticateFinance" method="Post">
                 
@@ -31,7 +57,7 @@
 
 
 
-    <div>
+    <div class="col">
         <h1>Employee Login</h1>
         <form action="http://localhost:7001/authenticateEmployee" method="Post">
             
@@ -47,11 +73,11 @@
         </form>
     
     </div>
-    
-<br>
-<br>
+     </div>
+    </div>
+
     
         
-        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
     </body>
 </html>

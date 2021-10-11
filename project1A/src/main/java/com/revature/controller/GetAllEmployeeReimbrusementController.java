@@ -19,7 +19,7 @@ public class GetAllEmployeeReimbrusementController {
 	}
 	public ArrayList<Reimbursement> getAll(int employeeNumber) {
 		// TODO Auto-generated method stub
-		return this.reimbursementService.GetAllEmployeeRequest(employeeNumber);
+		return this.reimbursementService.getAllEmployeeRequest(employeeNumber);
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class Employees {
+public class Employees implements Comparable<Employees>{
 
 	private int employeeId;
 	private int employeeNumber;
@@ -67,6 +67,25 @@ public class Employees {
 	public String toString() {
 		return "Employees [employeeId=" + employeeId + ", employeeNumber=" + employeeNumber + ", username=" + username
 				+ ", password=" + password + ", name=" + name + "]";
+	}
+
+	@Override
+	public int compareTo(Employees o) {
+		// TODO Auto-generated method stub
+		
+		
+		if((this.employeeId == o.employeeId)&& (this.employeeNumber == o.employeeNumber)
+		&&(this.username.equals(o.username))){
+			return 0;
+		}
+		else if((this.employeeId > o.employeeId)&& (this.employeeNumber > o.employeeNumber)
+				&&(this.username.compareTo(o.username) == 1)) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+		
 	}
 	
 	

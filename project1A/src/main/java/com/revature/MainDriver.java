@@ -93,7 +93,7 @@ private static void printList(List list) {
 		System.out.println("listC: ");
 		printList(list);
 		
-		reimbursementService.ChangeStatusOfRequestRnumber(63432, "APPROVED"); //reimbursement number
+		micekto reimbursementService.ChangeStatusOfRequestRnumber(63432, "APPROVED"); //reimbursement number
 		
 		list = reimbursementService.GetAllRequests();
 		System.out.println("listD: ");
@@ -101,7 +101,7 @@ private static void printList(List list) {
 		
 		Reimbursement rem = new Reimbursement(-1,  new Random().nextInt(10000), -1, "FOOD", "PENDING", 100, "power outage", new Timestamp(0) );
 		
-		reimbursementService.MakeRequest(rem, 15674);
+		mickto reimbursementService.MakeRequest(rem, 15674);
 		
 		list = reimbursementService.GetAllRequests();
 		System.out.println("listE: ");

@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class Finance {
+public class Finance implements Comparable<Finance>{
 
 	private int financeManagerId;
 	private int financeNumber;
@@ -66,6 +66,22 @@ public class Finance {
 	public String toString() {
 		return "Finance [financeManagerId=" + financeManagerId + ", financeNumber=" + financeNumber + ", username="
 				+ username + ", password=" + password + ", name=" + name + "]";
+	}
+
+	@Override
+	public int compareTo(Finance o) {
+		// TODO Auto-generated method stub
+		if((this.financeManagerId == o.financeManagerId)&& (this.financeNumber == o.financeNumber)
+				&&(this.username.equals(o.username))){
+					return 0;
+				}
+				else if((this.financeManagerId > o.financeManagerId)&& (this.financeNumber > o.financeNumber)
+						&&(this.username.compareTo(o.username) == 1)) {
+					return 1;
+				}
+				else {
+					return -1;
+				}
 	}
 	
 	

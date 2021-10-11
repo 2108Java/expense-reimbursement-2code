@@ -3,7 +3,7 @@ package com.revature.models;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class Reimbursement {
+public class Reimbursement implements Comparable<Reimbursement>{
 
 	private int reimbursementId;
 	private int reimbursementNumber;
@@ -105,6 +105,26 @@ public class Reimbursement {
 				+ ", employeeId=" + employeeId + ", reimursementType=" + reimbursementType + ", approveStatus="
 				+ approveStatus + ", amount=" + amount + ", description=" + description + ", timeStamp=" + timeStamp
 				+ "]";
+	}
+
+	@Override
+	public int compareTo(Reimbursement o) {
+		// TODO Auto-generated method stub
+		
+		
+		if((this.reimbursementId == o.reimbursementId)&&(this.reimbursementNumber == o.reimbursementNumber)
+				&&(this.employeeId == o.employeeId)) {
+			
+			return 0;
+		}
+		else if(((this.reimbursementId > o.reimbursementId)&&(this.reimbursementNumber > o.reimbursementNumber)
+				&&(this.employeeId > o.employeeId))) {
+					
+			return 1;
+		}
+		else {
+			return -1;
+		}
 	}
 	
 	
