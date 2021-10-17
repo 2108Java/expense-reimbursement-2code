@@ -1,6 +1,7 @@
 package com.revature.controller;
 
 import java.util.Random;
+import java.lang.*;
 
 import com.revature.models.Employees;
 import com.revature.models.Finance;
@@ -129,7 +130,7 @@ public class RequestMappings {
 			if(checkSession(ctx)){
 				
 				if(!(ctx.formParam("employeeNumber").isBlank()) &&(!(ctx.formParam("reimbursementAmount").isBlank() )&& (!ctx.formParam("reimbursementType").isBlank()))) {
-					System.out.println("about to make request");
+					
 					gAREmController.makeRequest(ctx);
 				}
 				else {
