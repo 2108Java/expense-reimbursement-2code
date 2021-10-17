@@ -30,28 +30,14 @@ public class DAOEmployeeImp implements DAOEmployee {
 			String sql ="SELECT * FROM employees WHERE employee_userName = ? AND employee_userPassword = ?;";
 			PreparedStatement ps = con.prepareStatement(sql);
 
-//			ps.setString(1, add.getTitle());
+
 			
 			ps.setString(1, username);
 			ps.setString(2, password);
 			
 			ResultSet rs = ps.executeQuery();
 			
-			//rs.next();
 			
-//			BankCustomer(int id, String userName, String password, int customerNumber, String firstName, String lastName) {
-				
-				/*
-				 * create table employees(
-	employee_id serial primary key, --primary key _
-	employee_userName varchar(20) unique,
-	employee_userPassword varchar(20) not null,
-	employee_number int unique not null,
-	employee_name varchar(20)
-	);
-	
-	public Employees(int employeeId, int employeeNumber, String username, String password, String name) 
-				 * */
 				
 				if((rs != null) &&(rs.next())) {
 				
@@ -59,7 +45,7 @@ public class DAOEmployeeImp implements DAOEmployee {
 						rs.getString("employee_userName"), rs.getString("employee_userPassword"), rs.getString("employee_name"));
 				}
 			
-				//System.out.println(employee.toString());
+				
 			
 			rs.close();                         
 			ps.close();

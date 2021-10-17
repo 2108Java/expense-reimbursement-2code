@@ -4,14 +4,19 @@
 <head>
 
     <title>Welcome To The Reimbursement Request Page</title>
-    <link rel="stylesheet" href="Login.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <!-- <link rel="stylesheet" href="Login.css"> -->
     
 </head>
+<style>
+    body{background-color: lightslategray;}
+</style>
 
 <body>
-    <div>
-        <h1>Reimbursement Request</h1>
-        <form action="http://localhost:9000/reimbursementRequest" method="GET">
+    <div class="container mt-3 d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <h1><u>Reimbursement Request</u></h1><br>
+        <br>
+        <form action="http://localhost:5500/reimbursementRequest" method="GET">
             
 <!--
             private int reimbursementId;
@@ -23,29 +28,50 @@
 	private String description;
 	private String timeStamp;
 -->
-            <h3>Enter Your Employee Number</h3>
-            <input type="text" name="employeeNumber">
-            
-            <h3>Select Reimbursement Type</h3>
-            <!--<input type="text" name="reimbursementType">-->
-            <input type="radio" id= "logging" name="reimbursementType" value="LOGGING">
-            <label for="logging">Logging</label><br>
-            <input type="radio" id= "travel" name="reimbursementType" value="TRAVEL">
-            <label for="travel">Travel</label><br>
-            <input type="radio" id= "food" name="reimbursementType" value="FOOD">
-            <label for="food">Food</label><br>
-            <input type="radio" id= "other" name="reimbursementType" value="OTHER">
-            <label for="other">Other</label><br>
-            <h3>Reimbursement Amount</h3>
-            <input type="number" name="reimbursementAmount" min= "1" max="100000000">
+            <h3 class="text-center">Enter Your Employee Number</h3>
+            <div class="text-center">
 
-            
-            <h3>Description Why You Should Be Reimbursed</h3>
-            <textarea rows = "5" cols = "50" name = "reimbursementDescription">
-                Enter your reason here
-             </textarea>
-           
-            <input type="submit">
+                <input type="text" name="employeeNumber" ><br>
+            </div>
+            <br>
+            <br>
+            <h3 class="text-center">Select Reimbursement Type</h3>
+            <!--<input type="text" name="reimbursementType">-->
+            <div class="text-center">
+
+                <div class="d-flex justify-content-between">
+                    
+                    <input type="radio" id= "logging" name="reimbursementType" value="LOGGING">
+                    <label for="logging">Logging</label><br>
+                    <input type="radio" id= "travel" name="reimbursementType" value="TRAVEL">
+                    <label for="travel">Travel</label><br>
+                    <input type="radio" id= "food" name="reimbursementType" value="FOOD">
+                    <label for="food">Food</label><br>
+                    <input type="radio" id= "other" name="reimbursementType" value="OTHER">
+                    <label for="other">Other</label><br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h3 class="text-center">Reimbursement Amount</h3>
+            <div class="text-center">
+
+                <input type="number" name="reimbursementAmount" min= "1" max="100000000">
+            </div>
+
+            <br>
+            <br>
+            <h3 class="text-center">Description Why You Should Be Reimbursed</h3>
+            <div class="text-center">
+
+                <textarea rows = "5" cols = "50" name = "reimbursementDescription">
+                    Enter your reason here
+                </textarea>
+            </div>
+           <div class="text-center">
+
+               <input type="submit">
+            </div>
     
         </form>
     </div>

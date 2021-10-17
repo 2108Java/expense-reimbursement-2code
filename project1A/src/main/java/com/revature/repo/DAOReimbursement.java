@@ -12,14 +12,11 @@ public interface DAOReimbursement {
 
 	ArrayList<Reimbursement> selectAllEmployeeRequest();
 
-	//ArrayList<Reimbursement> selectAllEmployeeRequestByNumber(int employeeNumber);
-
-	//boolean updateStatusByEmployeeNumber(int employeeNumber, String approveStatus);
-
+	
 	boolean updateStatusByReimbursementNumber(int reimbursementNumber, String approveStatus);
 
 	ArrayList<Reimbursement> selectAllByApproveStatus(int employeeNumber, String approveStatus);
-	//need to make a new fuction to dispaly all the status
+	
 
 	ArrayList<Reimbursement> selectAllByApproveStatus(String approveStatus);
 }

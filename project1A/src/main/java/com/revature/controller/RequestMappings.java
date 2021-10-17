@@ -1,5 +1,7 @@
 package com.revature.controller;
 
+import java.util.Random;
+
 import com.revature.models.Employees;
 import com.revature.models.Finance;
 import com.revature.repo.DAOEmployee;
@@ -67,7 +69,7 @@ public class RequestMappings {
 				}
 			}
 			else {
-				//ctx.res.sendRedirect("http://localhost:8000/");
+				
 				ctx.req.getRequestDispatcher("Welcome_login_page.html").forward(ctx.req, ctx.res);
 			}
 				
@@ -80,10 +82,10 @@ public class RequestMappings {
 				ctx.req.getRequestDispatcher("Employee_Page.html").forward(ctx.req, ctx.res);
 			}
 			else {
-				ctx.res.sendRedirect("http://localhost:7001/");
+				ctx.res.sendRedirect("/");
 			}
 		});
-		//AuthenticateFinanceConler;
+		
 		
 		app.get("/financeHomePage", ctx -> {
 			
@@ -92,7 +94,7 @@ public class RequestMappings {
 				ctx.req.getRequestDispatcher("Finance_Page.html").forward(ctx.req, ctx.res);	
 			}
 			else {
-				ctx.res.sendRedirect("http://localhost:7001/");
+				ctx.res.sendRedirect("/");
 			}
 				
 			
@@ -102,22 +104,38 @@ public class RequestMappings {
 		
 		
 		
-		//Authentication Controller!
-		//This is going to be my endpoints for authenticating a user! 
 		app.post("/authenticateEmployee", ctx -> {
 			
+			String username = ctx.formParam("username");
+			String password = ctx.formParam("password");
 			
 			
-			aEcontroller.authenticate(ctx);
+			if(!username.isBlank() && !password.isBlank()) {
+				aEcontroller.authenticate(ctx);
+			}
+			else {
+				ctx.redirect("/");
+			}
+			
+			
 			
 			
 		});
 		
 		app.post("/reimbursementRequest", ctx -> {
 			
-			//ac.authenticateUser(ctx);
+		
+			
 			if(checkSession(ctx)){
-				gAREmController.makeRequest(ctx);
+				
+				if(!(ctx.formParam("employeeNumber").isBlank()) &&(!(ctx.formParam("reimbursementAmount").isBlank() )&& (!ctx.formParam("reimbursementType").isBlank()))) {
+					System.out.println("about to make request");
+					gAREmController.makeRequest(ctx);
+				}
+				else {
+					ctx.redirect("/");
+				}
+				
 			}
 			else {
 				ctx.status(400);
@@ -127,9 +145,16 @@ public class RequestMappings {
 		
 		app.post("/authenticateFinance", ctx -> {
 			
+			String username = ctx.formParam("username");
+			String password = ctx.formParam("password");
 			
+			
+			if(!username.isBlank() && !password.isBlank()) {
 				aFcontroller.authenticate(ctx);
-		
+			}
+			else {
+				ctx.redirect("/");
+			}
 			
 		});
 		
@@ -138,11 +163,11 @@ public class RequestMappings {
 		ctx.consumeSessionAttribute("user");
 		ctx.consumeSessionAttribute("userType");
 		
-		ctx.redirect("http://localhost:7001/");
+		ctx.redirect("/");
 		});
 		
 		app.get("/finance", ctx -> {
-			//System.out.println("found end point");
+			
 			
 			if(checkSession(ctx)){
 			ctx.json(ctx.sessionAttribute("user"));
@@ -186,7 +211,17 @@ public class RequestMappings {
 		app.post("/setStatus", ctx -> {
 			
 			if(checkSession(ctx)){
-				gAREmController.setStatus(ctx);
+				
+				
+				String status = ctx.formParam("status");
+				
+				if(!ctx.formParam("reimbursementNumber").isBlank() && !status.isBlank()) {
+					gAREmController.setStatus(ctx);
+				}else {
+					ctx.redirect("/");
+				}
+				
+				
 			}
 			else {
 				ctx.status(400);

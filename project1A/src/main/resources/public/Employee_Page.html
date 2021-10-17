@@ -5,6 +5,9 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 
+<style>
+    body{background-color: #D4AF37;}
+</style>
 
 
     <title>Welcome To The Employee Page</title>
@@ -12,15 +15,18 @@
 </head>
 
 <body>
-    <label id="employeename">placeholder name:</label>
+	<p><h2>Welcome:</h2>
+    <h2><label id="employeename">placeholder name:</label></h2>
     <br></br>
-    <label id="employeeNumber">placeholder number:</label>
-
+    <h2>Employee Number:</h2>
+    <h2><label id="employeeNumber">placeholder number:</label></h2>
+	</p>
 	<br></br>
 
-    <label>Reimbursements</label>
-    <table id="ReimbursementTable">
-        <thead>
+<div class="container mt-3">
+    <h3><label>Reimbursements</label></h3>
+    <table class="table caption-top table-dark"  id="ReimbursementTable">
+        <thead class="table-dark">
             <tr>
             
               
@@ -41,7 +47,7 @@
             </tr>
         </tbody>
     </table>
-    
+    </div>
     <a href="/Reimbursement_Request.html">Make A Reimbursement Request</a>
     <a href="/invalidateSession">LOGOUT</a>
     

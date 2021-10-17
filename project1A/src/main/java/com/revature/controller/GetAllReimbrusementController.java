@@ -32,14 +32,13 @@ private ReimbursementService reimbursementService;
 		int reimbursementNumber = Integer.parseInt(ctx.formParam("reimbursementNumber"));
 		String status = ctx.formParam("status");
 		
-		//System.out.println("reimbursementNumber: "+ reimbursementNumber);
-		//System.out.println("status: "+ status );
-		
-		this.reimbursementService.changeStatusOfRequestRnumber(reimbursementNumber, status.toUpperCase());
 		
 		
 		try {
-			ctx.res.sendRedirect("http://localhost:7001/");
+			if(this.reimbursementService.changeStatusOfRequestRnumber(reimbursementNumber, status.toUpperCase())){
+				ctx.res.setStatus(200);
+				ctx.res.sendRedirect("/");
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,28 +48,7 @@ private ReimbursementService reimbursementService;
 	public void makeRequest(Context ctx) {
 		// TODO Auto-generated method stub
 		
-		/*
-		 * 
-            private int reimbursementId;
-	private int reimbursementNumber;
-	private int employeeId;
-	private String reimbursementType;
-	private String approveStatus;
-	private double amount;
-	private String description;
-	private String timeStamp;
 		
-		
-		ps.setInt(1, reimbursment.getRembursementNumber()); //5
-		ps.setInt(2, employeeNumber);
-		ps.setString(3, reimbursment.getReimursementType());
-		ps.setString(4, reimbursment.getApproveStatus());
-		ps.setDouble(5, reimbursment.getAmount());			
-		ps.setString(6, reimbursment.getDescription());
-		
-		Reimbursement(int reimbursementId, int reimbursementNumber, int employeeId, String reimbursementType,
-				String approveStatus, double amount, String description, Timestamp timestamp)
-		*/
 		
 		int employeeNumber = Integer.parseInt(ctx.formParam("employeeNumber"));
 		int rembursementNumber =new Random().nextInt(10000);
@@ -83,10 +61,15 @@ private ReimbursementService reimbursementService;
 		
 		
 		
-		this.reimbursementService.makeRequest(rq, employeeNumber);
+		
 		
 		try {
-			ctx.res.sendRedirect("http://localhost:7001/");
+			if(this.reimbursementService.makeRequest(rq, employeeNumber)) {
+				
+				
+				ctx.res.setStatus(200);
+				ctx.res.sendRedirect("/");
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

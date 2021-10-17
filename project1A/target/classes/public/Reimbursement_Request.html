@@ -4,14 +4,18 @@
 <head>
 
     <title>Welcome To The Reimbursement Request Page</title>
-    <link rel="stylesheet" href="Login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+<style>
+    body{background-color: #D4AF37;}
+</style>
     
 </head>
 
 <body>
-    <div>
-        <h1>Reimbursement Request</h1>
-        <form action="http://localhost:7001/reimbursementRequest" method="POST">
+    <div class="container mt-3">
+        <h1><center>Reimbursement Request</center></h1>
+        <form action="/reimbursementRequest" method="POST">
             
 <!--
             private int reimbursementId;
@@ -24,7 +28,7 @@
 	private String timeStamp;
 -->
             <h3>Enter Your Employee Number</h3>
-            <input type="text" name="employeeNumber">
+            <input type="number" name="employeeNumber">
             
             <h3>Select Reimbursement Type</h3>
             <!--<input type="text" name="reimbursementType">-->
@@ -48,7 +52,7 @@
     
         </form>
     </div>
-    
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script> 
 </body>
 
 </html>

@@ -25,11 +25,7 @@ public class AuthenticateEmployeeConler {
 		String username = ctx.formParam("username");
 		String password = ctx.formParam("password");
 		
-		//System.out.println("username: "+ username);
-		//System.out.println("password: "+ password );
 		
-		
-		//console.log("Hello");
 		
 		Employees employee = this.employeeService.loginEmployee(username, password);
 		
@@ -42,13 +38,10 @@ public class AuthenticateEmployeeConler {
 			ctx.sessionAttribute("userType","Employees");
 			
 			
-			//When you want to turn back into a GET request
-			//Ask the client to send another request, 
-			//The client will send the request through the search bar
-			//The search bar is by definition a GET request. 
-//			ctx.res.sendRedirect("http://localhost:8000/home");
+			
 			try {
-				ctx.res.sendRedirect("http://localhost:7001/");
+				ctx.res.setStatus(200);
+				ctx.res.sendRedirect("/");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

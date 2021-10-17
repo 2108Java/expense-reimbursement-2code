@@ -28,21 +28,7 @@ public class DAOReimbursementImp implements DAOReimbursement {
 		
 		try {
 			Connection con = this.connectionFactory.getConnection();
-	/*
-	 * create table reimbursement(
-	reimbursement_id serial primary key,
-	reimbursement_number int unique not null,
-	foreign_employees_key int references employees(employee_id),
-	reimbursement_Type varchar(8),
-	reimbursement_approveStatus varchar(10),
-	reimbursement_amount real not null,
-	reimbursement_description varchar(70),
-	rTS timestamp NOT NULL DEFAULT NOW()
-);		
 
-public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
-			String approveStatus, double amount, String description, String timeStamp)
-*/
 			
 			String sql ="SELECT * FROM reimbursement WHERE foreign_employees_key = (SELECT employee_id FROM employees WHERE employee_number = ?);";
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -60,7 +46,7 @@ public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId
 					reimbursementList.add(reimbursement);
 				}
 			
-				//System.out.println(employee.toString());
+				
 			
 			rs.close();                         
 			ps.close();
@@ -116,21 +102,7 @@ public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId
 		
 		try {
 			Connection con = this.connectionFactory.getConnection();
-	/*
-	 * create table reimbursement(
-	reimbursement_id serial primary key,
-	reimbursement_number int unique not null,
-	foreign_employees_key int references employees(employee_id),
-	reimbursement_Type varchar(8),
-	reimbursement_approveStatus varchar(10),
-	reimbursement_amount real not null,
-	reimbursement_description varchar(70),
-	rTS timestamp NOT NULL DEFAULT NOW()
-);		
 
-public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
-			String approveStatus, double amount, String description, String timeStamp)
-*/
 			
 			String sql ="SELECT * FROM reimbursement";
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -205,21 +177,7 @@ ArrayList<Reimbursement> reimbursementList = new ArrayList<>();
 		
 		try {
 			Connection con = this.connectionFactory.getConnection();
-	/*
-	 * create table reimbursement(
-	reimbursement_id serial primary key,
-	reimbursement_number int unique not null,
-	foreign_employees_key int references employees(employee_id),
-	reimbursement_Type varchar(8),
-	reimbursement_approveStatus varchar(10),
-	reimbursement_amount real not null,
-	reimbursement_description varchar(70),
-	rTS timestamp NOT NULL DEFAULT NOW()
-);		
-
-public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
-			String approveStatus, double amount, String description, String timeStamp)
-*/
+	
 			
 			String sql ="SELECT * FROM reimbursement WHERE reimbursement_approveStatus= ? AND foreign_employees_key = (SELECT employee_id FROM employees WHERE employee_number = ?);";
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -239,7 +197,7 @@ public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId
 					reimbursementList.add(reimbursement);
 				}
 			
-				//System.out.println(employee.toString());
+				
 			
 			rs.close();                         
 			ps.close();
@@ -262,22 +220,7 @@ ArrayList<Reimbursement> reimbursementList = new ArrayList<>();
 		
 		try {
 			Connection con = this.connectionFactory.getConnection();
-	/*
-	 * create table reimbursement(
-	reimbursement_id serial primary key,
-	reimbursement_number int unique not null,
-	foreign_employees_key int references employees(employee_id),
-	reimbursement_Type varchar(8),
-	reimbursement_approveStatus varchar(10),
-	reimbursement_amount real not null,
-	reimbursement_description varchar(70),
-	rTS timestamp NOT NULL DEFAULT NOW()
-);		
-
-public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId, String reimursementType,
-			String approveStatus, double amount, String description, String timeStamp)
-*/
-			
+	
 			String sql ="SELECT * FROM reimbursement WHERE reimbursement_approveStatus= ?;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			
@@ -296,7 +239,7 @@ public Reimbursement(int reimbursementId, int rembursementNumber, int employeeId
 					reimbursementList.add(reimbursement);
 				}
 			
-				//System.out.println(employee.toString());
+				
 			
 			rs.close();                         
 			ps.close();
