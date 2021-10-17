@@ -131,7 +131,7 @@ function addRow(aReimbursement){
         
     }
     
-    xhttp.open("GET", "http://localhost:7001/getAllReimbursements");
+    xhttp.open("GET", "http://ec2-18-221-223-49.us-east-2.compute.amazonaws.com:7001/getAllReimbursements");
 
     xhttp.send();
 	
@@ -189,7 +189,7 @@ function getFinance() {
         
     }
     
-    xhttp.open("GET", "http://localhost:7001/finance");
+    xhttp.open("GET", "http://ec2-18-221-223-49.us-east-2.compute.amazonaws.com:7001/finance");
 
     xhttp.send();
     
@@ -276,7 +276,7 @@ function getAllApprove(Status){
         
     }
     
-    xhttp.open("GET", "http://localhost:7001/getAllReimbursements");
+    xhttp.open("GET", "http://ec2-18-221-223-49.us-east-2.compute.amazonaws.com:7001/getAllReimbursements");
 
     xhttp.send();
 	
