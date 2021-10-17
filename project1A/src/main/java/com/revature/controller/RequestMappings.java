@@ -111,7 +111,7 @@ public class RequestMappings {
 			String password = ctx.formParam("password");
 			
 			
-			if(!username.isBlank() && !password.isBlank()) {
+			if(!username.isEmpty() && !password.isEmpty()) {
 				aEcontroller.authenticate(ctx);
 			}
 			else {
@@ -129,7 +129,7 @@ public class RequestMappings {
 			
 			if(checkSession(ctx)){
 				
-				if(!(ctx.formParam("employeeNumber").isBlank()) &&(!(ctx.formParam("reimbursementAmount").isBlank() )&& (!ctx.formParam("reimbursementType").isBlank()))) {
+				if(!(ctx.formParam("employeeNumber").isEmpty()) &&(!(ctx.formParam("reimbursementAmount").isEmpty() )&& (!ctx.formParam("reimbursementType").isEmpty()))) {
 					
 					gAREmController.makeRequest(ctx);
 				}
@@ -150,7 +150,7 @@ public class RequestMappings {
 			String password = ctx.formParam("password");
 			
 			
-			if(!username.isBlank() && !password.isBlank()) {
+			if(!username.isEmpty() && !password.isEmpty()) {
 				aFcontroller.authenticate(ctx);
 			}
 			else {
@@ -216,7 +216,7 @@ public class RequestMappings {
 				
 				String status = ctx.formParam("status");
 				
-				if(!ctx.formParam("reimbursementNumber").isBlank() && !status.isBlank()) {
+				if(!ctx.formParam("reimbursementNumber").isEmpty() && !status.isEmpty()) {
 					gAREmController.setStatus(ctx);
 				}else {
 					ctx.redirect("/");
