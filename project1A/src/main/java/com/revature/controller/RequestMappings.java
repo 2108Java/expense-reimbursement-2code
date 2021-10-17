@@ -111,7 +111,7 @@ public class RequestMappings {
 			String password = ctx.formParam("password");
 			
 			
-			if(!username.isBlank() && !password.isBlank()) {
+			if(!username.isEmpty() && !password.isEmpty()) {
 				aEcontroller.authenticate(ctx);
 			}
 			else {
