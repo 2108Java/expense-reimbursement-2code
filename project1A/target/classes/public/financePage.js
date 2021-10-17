@@ -220,7 +220,7 @@ function getAllApprove(Status){
 	let tableBody = document.getElementById("TableBody");
 	tableBody.innerHTML ="";
 		
-	console.log("TableBody");
+	//console.log("TableBody");
 	//console.log(tableBody.delete);
 	
 //var Table = document.getElementById("mytable");
@@ -229,8 +229,8 @@ function getAllApprove(Status){
 	
 		let responseObject = JSON.parse(this.responseText);
 
-        console.log("the response text: "+this.responseText);
-        console.log("the responseObject: "+responseObject);
+        //console.log("the response text: "+this.responseText);
+        //console.log("the responseObject: "+responseObject);
         //console.log(responseObject.name);
         //console.log(responseObject.employeeNumber);
         //console.log(responseObject.types[0].type.name);
@@ -244,19 +244,19 @@ function getAllApprove(Status){
     
     let reimbursementObject = new Reimbursement(responseObject[index].reimbursementId, responseObject[index].rembursementNumber, responseObject[index].employeeId, responseObject[index].reimursementType, responseObject[index].approveStatus, responseObject[index].amount, responseObject[index].description, responseObject[index].timeStamp);
 		
-		console.log("reimbursementId: " +responseObject[index].reimbursementId);
-		console.log("reimbursementNumber: " +responseObject[index].rembursementNumber);
-		console.log("employeeId: " +responseObject[index].employeeId);
-		console.log("reimbursementType: " +responseObject[index].reimursementType);
-		console.log("approveStatus: " +responseObject[index].approveStatus);
-		console.log("amount: " +responseObject[index].amount);
-		console.log("description: " +responseObject[index].description);
-		console.log("timestamp: " +responseObject[index].timeStamp);
-		console.log("the object");
-		console.log(reimbursementObject);
+		//console.log("reimbursementId: " +responseObject[index].reimbursementId);
+		//console.log("reimbursementNumber: " +responseObject[index].rembursementNumber);
+		//console.log("employeeId: " +responseObject[index].employeeId);
+		//console.log("reimbursementType: " +responseObject[index].reimursementType);
+		//console.log("approveStatus: " +responseObject[index].approveStatus);
+		//console.log("amount: " +responseObject[index].amount);
+		//console.log("description: " +responseObject[index].description);
+		//console.log("timestamp: " +responseObject[index].timeStamp);
+		//console.log("the object");
+		//console.log(reimbursementObject);
 		
 		//console.log("the en: "+emNumber);
-		console.log("Status: "+Status);
+		//console.log("Status: "+Status);
 		if(Status != "ALL"){
 			if(responseObject[index].approveStatus == Status){
 				addRow(reimbursementObject);
@@ -268,10 +268,7 @@ function getAllApprove(Status){
 		//addRow(reimbursementObject);
     
 
-}
- 
- 
-        
+}    
         
         
            
@@ -293,7 +290,7 @@ let contact = document.querySelectorAll('input[name="myradio"]');
 for (let i = 0; i < contact.length; i++) {
   contact[i].addEventListener("change", function() {
     let val = this.value; // this == the clicked radio,
-    console.log(val);
+    //console.log(val);
     filter(val)
   });
 }
