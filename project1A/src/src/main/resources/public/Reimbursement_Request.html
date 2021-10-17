@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome To The Reimbursement Request Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+<style>
+    body{background-color: #D4AF37;}
+</style>
+    
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h1><center>Reimbursement Request</center></h1>
+        <form action="/reimbursementRequest" method="POST">
+            
+<!--
+            private int reimbursementId;
+	private int reimbursementNumber;
+	private int employeeId;
+	private String reimbursementType;
+	private String approveStatus;
+	private double amount;
+	private String description;
+	private String timeStamp;
+-->
+            <h3>Enter Your Employee Number</h3>
+            <input type="number" name="employeeNumber">
+            
+            <h3>Select Reimbursement Type</h3>
+            <!--<input type="text" name="reimbursementType">-->
+            <input type="radio" id= "lodging" name="reimbursementType" value="LODGING">
+            <label for="lodging">Lodging</label><br>
+            <input type="radio" id= "travel" name="reimbursementType" value="TRAVEL">
+            <label for="travel">Travel</label><br>
+            <input type="radio" id= "food" name="reimbursementType" value="FOOD">
+            <label for="food">Food</label><br>
+            <input type="radio" id= "other" name="reimbursementType" value="OTHER">
+            <label for="other">Other</label><br>
+            <h3>Reimbursement Amount</h3>
+            <input type="number" name="reimbursementAmount" min= "1" max="100000000">
+
+            
+            <h3>Description Why You Should Be Reimbursed</h3>
+            <textarea rows = "5" cols = "50" name = "reimbursementDescription" >
+             </textarea>
+           
+            <input type="submit">
+    
+        </form>
+    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script> 
+</body>
+
+</html>

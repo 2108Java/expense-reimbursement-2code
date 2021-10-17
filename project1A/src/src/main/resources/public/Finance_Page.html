@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+
+<title>Welcome To The Finance Page</title>
+
+ 
+ <style>
+    body{background-color: #D4AF37;}
+</style>
+ 
+</head>
+
+<body>
+
+	<p><h2>Welcome:</h2>
+    <h2><label id="financename">placeholder name:</label></h2>
+    <br></br>
+    <h2>Finance Number:</h2>
+    <h2><label id="financeNumber">placeholder number:</label></h2>
+	</p>
+	<br></br>
+	
+
+	<div class="container mt-3">
+
+    <table class="table caption-top table-dark" id="ApprovedTable">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Reimbursement Number</th>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Type of Reimbursement</th>
+                <th scope="col">Reimbursement Status</th>
+                <th scope="col">Amount Requested</th>
+                <th scope="col">Description</th>                
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody id = "TableBody">
+            <tr>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--  <form name="formA"> -->
+<input type="radio" id= "approve" name="myradio" value="A"/>
+<label for="approve">Approve</label><br>
+
+<input type="radio" id = "rejected"  name="myradio" value="R"/>
+<label for="rejected">Rejected  </label><br>
+
+<input type="radio" id = "pending" name="myradio" value="P"/>
+<label for="pending">Pending</label><br>
+
+<input type="radio" id= "ALL" name="myradio" value="ALL"/>
+<label for="ALL">ALL</label><br>
+
+<h2>Update Status</h2>
+<form action="/setStatus" method="post">
+    
+    <label for="reimbursementNumber">Reimbursement Number </label>
+    <input type="number" name="reimbursementNumber" min= "1" max="100000000">
+    
+    <label for="status">Status </label>
+    <input type="text" name="status">
+    
+    <input type="submit" value="Submit">
+</form>
+
+<div>
+
+    
+    <a href="/invalidateSession">LOGOUT</a>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="financePage.js"></script>
+</body>
+
+</html>

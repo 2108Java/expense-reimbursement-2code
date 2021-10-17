@@ -1,0 +1,83 @@
+<html>
+
+
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+<style type="text/css">
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+
+</style>
+</head>
+    <body>
+   
+
+			<br>
+     <video src="pexels-rostislav-uzunov-9629255.mp4" muted loop autoplay id="myVideo"></video>
+     
+
+	<div class="content" class="container" >
+
+ 	<h1 ><center>Welcome To The Reimbursement App</center></h1><br>
+
+	
+	
+		 <div class="row">
+		<div class="col">
+            <h1>Finance Manager Login</h1>
+            <form action="/authenticateFinance" method="Post">
+                
+                <h3>Username</h3>
+                <input type="text" name="username" id="maUsername">
+                
+                <h3>Password</h3>
+                <input type="password" name="password" id="maPassword"><br>
+                <br>
+                
+                <input type="submit" class="login" value="Login Finance">
+                
+            </form>
+        </div>
+
+
+
+    <div class="col">
+        <h1>Employee Login</h1>
+        <form action="/authenticateEmployee" method="Post">
+            
+            <h3>Username</h3>
+            <input type="text" name="username" id="emUsername">
+            
+            <h3>Password</h3>
+            <input type="password" name="password" id="emPassword"><br>
+            <br>
+            <!--  <button type="button" onclick="emLogin()">Login <i class='fas fa-exclamation-triangle'></i></button>-->
+            <input type="submit" class="login" value="Login Employee">
+            
+        </form>
+    
+    </div>
+     </div>
+    </div>
+
+    
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    </body>
+</html>
